@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import React from "react";
 import portrait from "@/public/portrait.jpg";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -35,7 +35,10 @@ export default function Intro() {
   //   }
   // }, [audio]);
   return (
-    <section className="mb-28 max-w-[50rem] text-center sm:mb-0">
+    <section
+      className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
+      id="home"
+    >
       {/* portrait */}
       <div
         className=" flex items-center justify-center"
@@ -71,7 +74,7 @@ export default function Intro() {
       </div>
 
       {/* personal intro */}
-      <motion.p
+      <motion.h1
         className="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
@@ -89,7 +92,7 @@ export default function Intro() {
             turning ideas into reality with code!
           </span>
         </span>
-      </motion.p>
+      </motion.h1>
 
       {/* personal icon links (contact, cv, linkdin, github) */}
       <motion.div
