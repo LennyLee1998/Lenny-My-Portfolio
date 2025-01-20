@@ -7,6 +7,7 @@ import Link from "next/link";
 import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
+import { useSectionInView } from "@/lib/hooks";
 
 export default function Intro() {
   // 1. 构思功能,给小鹿加上音效,之后再加上动画
@@ -34,8 +35,12 @@ export default function Intro() {
   //     audio.play().catch((err) => console.log("Audio play failed:", err));
   //   }
   // }, [audio]);
+
+  const { ref } = useSectionInView("Home", 0.5);
+
   return (
     <section
+      ref={ref}
       className="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]"
       id="home"
     >

@@ -3,8 +3,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import clsx from "clsx";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Header() {
+  // 这里之所以使用hook, 是为了把null值从context里面排除掉,否则这里没办法进行结构, 因为null上面结构属性会报错
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
+
   return (
     <header className="relative z-[999]">
       {/* 虽然外层元素设置为relative，使得其子元素（如设置为 absolute 或 fixed 的元素）可以相对于这个外层元素定位，但这不会改变 fixed 元素本身的行为。fixed 元素依然是相对于整个窗口定位的。 */}
@@ -24,15 +30,36 @@ export default function Header() {
             return (
               <motion.li
                 key={link.hash}
-                className="h-3/4 flex items-center justify-center "
+                className="h-3/4 flex items-center justify-center relative"
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
               >
+                {/* 用户的动作: click => 
+                 1.url变化 & scroll => href & id
+                 2.btn颜色变化 => activeSection*/}
                 <Link
-                  className="flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition"
+                  className={clsx(
+                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
+                    { "text-gray-900 font-bold ": activeSection === link.name }
+                  )}
                   href={link.hash}
+                  onClick={() => {
+                    setActiveSection(link.name);
+                    setTimeOfLastClick(Date.now());
+                  }}
                 >
                   {link.name}
+                  {link.name === activeSection && (
+                    <motion.span
+                      className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                      layoutId="activeSection"
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
+                    ></motion.span>
+                  )}
                 </Link>
               </motion.li>
             );
