@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lenny's Portfolio
 
-## Getting Started
+![portfolio](public/portfolio.png)
+Welcome to [my portfolio](https://lenny-my-portfolio.vercel.app/)! I'm Lenny, a full-stack developer dedicated to creating innovative web experiences.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
+![responsive](public/responsive.png)
+- **Dark Mode**: Easily switch between light and dark themes for comfort.
+![dark_mode](public/drak_mode.png)
+- **Contact Form**: Reach out to me directly via email through the integrated contact feature.
+![contact form](public/email.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: For building server-rendered React applications.
+- **Framer Motion**: For smooth animations and transitions.
+- **TypeScript**: Enhancing the development experience with type safety.
+- **Tailwind CSS**: For utility-first styling.
+- **Email**: Integrated contact functionality.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Live Demo
 
-## Learn More
+Explore my portfolio live at: [Lenny's Portfolio](https://lenny-my-portfolio.vercel.app/)
 
-To learn more about Next.js, take a look at the following resources:
+## Contact Me
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Feel free to connect through the contact form on the website or reach out via [GitHub](https://github.com/LennyLee1998).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thank you for visiting! I hope you enjoy exploring my work.
