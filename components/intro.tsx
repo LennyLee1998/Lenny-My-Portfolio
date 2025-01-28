@@ -8,6 +8,7 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
 
 export default function Intro() {
   // 1. 构思功能,给小鹿加上音效,之后再加上动画
@@ -37,7 +38,7 @@ export default function Intro() {
   // }, [audio]);
 
   const { ref } = useSectionInView("Home", 0.5);
-
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   return (
     <section
       ref={ref}
@@ -109,13 +110,17 @@ export default function Intro() {
         <Link
           href="#contact"
           className="group flex items-center gap-2 rounded-full bg-gray-900 text-white px-7 py-3 outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me here
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
         </Link>
 
         <a
-          className="group flex items-center gap-2 rounded-full px-7 py-3 bg-white  cursor-pointer outline-none focus:scale-110 hover:scale-110  active:scale-105 transition border border-black/10"
+          className="group flex items-center gap-2 rounded-full px-7 py-3 bg-white  cursor-pointer outline-none focus:scale-110 hover:scale-110  active:scale-105 transition borderBlack dark:bg-white/10"
           href="/CV.pdf"
           download
         >
@@ -124,7 +129,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="flex items-center  rounded-full  p-4 bg-white text-gray-700 cursor-pointer focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10"
+          className="flex items-center  rounded-full  p-4 bg-white text-gray-700 cursor-pointer focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://linkedin.com"
           target="_blank"
         >
@@ -132,7 +137,7 @@ export default function Intro() {
         </a>
 
         <a
-          className="flex items-center  rounded-full  p-4 bg-white  text-gray-700 text-[1.35rem] cursor-pointer focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition border border-black/10"
+          className="flex items-center  rounded-full  p-4 bg-white  text-gray-700 text-[1.35rem] cursor-pointer focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition borderBlack dark:bg-white/10 dark:text-white/60"
           href="https://github.com/lennylee1998"
           target="_blank"
         >

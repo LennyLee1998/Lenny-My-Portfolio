@@ -15,7 +15,7 @@ export default function Header() {
     <header className="relative z-[999]">
       {/* 虽然外层元素设置为relative，使得其子元素（如设置为 absolute 或 fixed 的元素）可以相对于这个外层元素定位，但这不会改变 fixed 元素本身的行为。fixed 元素依然是相对于整个窗口定位的。 */}
       <motion.div
-        className="fixed left-1/2 top-0 rounded-none w-full h-[4.5rem] border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-[36rem] sm:h-[3.25rem]  sm:top-6 sm:rounded-full"
+        className="fixed left-1/2 top-0 rounded-none w-full h-[4.5rem] border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-[36rem] sm:h-[3.25rem]  sm:top-6 sm:rounded-full dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
         // 表示元素的初始状态
         //这个x可以替代translate, 去掉即可
         initial={{ y: -100, x: "-50%", opacity: 0 }}
@@ -39,8 +39,8 @@ export default function Header() {
                  2.btn颜色变化 => activeSection*/}
                 <Link
                   className={clsx(
-                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
-                    { "text-gray-900 font-bold ": activeSection === link.name }
+                    "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300",
+                    { "text-gray-950 dark:text-gray-200 ": activeSection === link.name }
                   )}
                   href={link.hash}
                   onClick={() => {
@@ -51,7 +51,7 @@ export default function Header() {
                   {link.name}
                   {link.name === activeSection && (
                     <motion.span
-                      className="bg-gray-100 rounded-full absolute inset-0 -z-10"
+                      className="bg-gray-100 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                       layoutId="activeSection"
                       transition={{
                         type: "spring",
