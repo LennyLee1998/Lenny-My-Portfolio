@@ -121,7 +121,7 @@ export default function Intro() {
 
         <a
           className="group flex items-center gap-2 rounded-full px-7 py-3 bg-white  cursor-pointer outline-none focus:scale-110 hover:scale-110  active:scale-105 transition borderBlack dark:bg-white/10"
-          href="/CV.pdf"
+          href="/resume-1.pdf"
           download
         >
           Download CV
@@ -130,10 +130,16 @@ export default function Intro() {
 
         <a
           className="flex items-center  rounded-full  p-4 bg-white text-gray-700 cursor-pointer focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition borderBlack dark:bg-white/10 dark:text-white/60"
-          href="https://linkedin.com"
+          href="https://lenny-blog.vercel.app/"
           target="_blank"
         >
-          <BsLinkedin />
+          <Image
+            src="/blog.png"
+            alt="Lenny's blog favicon"
+            width={24}
+            height={24}
+            // className=""
+          />
         </a>
 
         <a

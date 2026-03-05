@@ -48,7 +48,7 @@ export const experiencesData = [
     location: "Orlando, FL",
     description:
       "I worked as a front-end developer for 2 years in 1 job and 1 year in another job. I also upskilled to the full stack.",
-      // CgWorkAlt是一个组件
+    // CgWorkAlt是一个组件
     icon: React.createElement(CgWorkAlt),
     date: "2019 - 2021",
   },
@@ -81,7 +81,7 @@ export const projectsData = [
     title: "Word Analytics",
     description:
       "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
+    tags: ["React", "Next.js", "Tailwind", "TypeScript", "Framer"],
     imageUrl: wordanalyticsImg,
   },
 ] as const;
